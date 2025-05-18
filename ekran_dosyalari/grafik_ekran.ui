@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1900</width>
+    <height>950</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="grafikLogo">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>250</width>
+     <height>250</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="PlotWidget" name="ivme_z_grafik" native="true">
+   <property name="geometry">
+    <rect>
+     <x>1290</x>
+     <y>630</y>
+     <width>600</width>
+     <height>300</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="PlotWidget" name="irtifa_grafik" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>280</y>
+     <width>651</width>
+     <height>651</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="PlotWidget" name="gyro_z_grafik" native="true">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>630</y>
+     <width>600</width>
+     <height>300</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="PlotWidget" name="gyro_x_grafik" native="true">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>10</y>
+     <width>600</width>
+     <height>300</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="PlotWidget" name="ivme_y_grafik" native="true">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1290</x>
+     <y>320</y>
+     <width>600</width>
+     <height>300</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="PlotWidget" name="gyro_y_grafik" native="true">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>320</y>
+     <width>600</width>
+     <height>300</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="PlotWidget" name="ivme_x_grafik" native="true">
+   <property name="geometry">
+    <rect>
+     <x>1290</x>
+     <y>10</y>
+     <width>600</width>
+     <height>300</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QWidget</extends>
+   <header>pyqtgraph</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

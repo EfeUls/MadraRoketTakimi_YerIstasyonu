@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Payload Haritası</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet CSS ve JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+    <style>
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+        // Haritayı başlat
+        var map = L.map('map').setView([39.0, 34.0], 6); // Başlangıç koordinatı
+
+        // OpenStreetMap katmanı ekle
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap katkıcıları'
+        }).addTo(map);
+
+        // Marker ve rota yapılandırması
+        var marker = null;
+        var path = [];
+        var polyline = L.polyline(path, {
+            color: 'blue'
+        }).addTo(map);
+
+        // Python tarafından çağrılacak fonksiyon
+        function updateMarker(lat, lon) {
+            var latlng = [lat, lon];
+            if (marker === null) {
+                marker = L.marker(latlng).addTo(map);
+            } else {
+                marker.setLatLng(latlng);
+            }
+            map.setView(latlng, 15);
+
+            // Rota çiz
+            path.push(latlng);
+            polyline.setLatLngs(path);
+        }
+    </script>
+</body>
+
+</html>
